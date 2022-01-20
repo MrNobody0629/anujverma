@@ -1,0 +1,31 @@
+var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport({
+  service: 'outlook',
+  auth: {
+    // user: 'anujvermapersonalportfolio@outlook.com',
+    user: 'portfolio0629@outlook.com',
+    pass: 'Anujportfolio22@#'
+  }
+});
+
+const sendMail = (name,email,subject,message)=>
+{
+    var subject = "Thank You For Registering";
+    var mailOptions = {
+    from: "portfolio0629@outlook.com",
+    to: "anujv962@gmail.com",
+    subject: subject,
+    html: '<h2>Mail Sended BY '+name+'</h2><br><h3>Sender EmailId is '+email+'</h3><br><p>'+message+'</p>',
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+        console.log(error);
+    } else {
+        console.log('Email sent: ' + info.response);
+    }
+    });
+}
+
+module.exports = {sendMail};
