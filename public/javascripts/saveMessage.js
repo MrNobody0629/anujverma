@@ -1,4 +1,5 @@
-var host = "http://localhost:3000/api";
+//var host = "http://localhost:3000/api";
+var host = "https://anuj-verma.herokuapp.com/api";
 
 function saveMessage(event)
 {
