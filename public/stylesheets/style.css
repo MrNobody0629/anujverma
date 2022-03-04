@@ -995,13 +995,3 @@ section {
 .state-message {
   color: red;
 }
-
-div.profile_img {
-  width: 150px;
-  height: 150px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  text: center;
-  background-color: red;
-}

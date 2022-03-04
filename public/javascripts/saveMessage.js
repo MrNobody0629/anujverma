@@ -1,38 +1,35 @@
-// var host = "http://localhost:3000/api";
-var host = "https://anuj-verma.herokuapp.com/api";
+var host = window.location.origin+"/api";
 
 function saveMessage(event)
 {
     event.preventDefault()
-    stageCLick(event);
-    
+    $('.sendMailBtn').text('Please wait..');
     var name = $('#formname').val();
     var email = $('#formemail').val();
     var subject = $('#formsubject').val();
     var message = $('#formmessage').val();
     if(name == '') {
         $('.state-message').text('Enter Your Name Please..');
+        stageIdle();
         setTimeout(()=>{
             $('.state-message').text('');
-            stageIdle(event)
         },5000);
         return false;
     }
     if(email == '') {
         $('.state-message').text('Enter Your Mail Please..');
+        stageIdle();
         setTimeout(()=>{
             $('.state-message').text('');
-            stageIdle(event)
             $(event.target).button('reset');
         },5000);
         return false;
     }
     if(message == '') {
         $('.state-message').text('Enter Something..');
+        stageIdle();
         setTimeout(()=>{
             $('.state-message').text('');
-            stageIdle(event)
-            $(event.target).button('reset');
         },5000);
         return false;
     }
@@ -43,28 +40,24 @@ function saveMessage(event)
         data:{name:name,email:email,subject:subject,message:message},
         success:function(data)
         {
-            $('.state-message').text('Your message has been sent. Thank you!');
+            $('.sendMailBtn').text('Success');
+            $('.sendMailBtn').css('backgroundColor','#198754');
             setTimeout(()=>{
-                $('.state-message').text('');
                 stageIdle(event)
-            },5000);
+            },10000);
         },
         error:function(err)
         {
-            $('.state-message').text('Thank you!');
+            $('.sendMailBtn').text('Success');
+            $('.sendMailBtn').css('backgroundColor','#198754');
             setTimeout(()=>{
-                $('.state-message').text('');
                 stageIdle(event)
-            },5000);
+            },10000);
         }
     });
 }
 
-const stageCLick = (event)=>{
-    $(event.target).text('Please Wait..');
-    $(event.target).css('backgroundColor','red');
-}
-const stageIdle = (event)=>{
-    $(event.target).text('Send Message');
-    $(event.target).css('backgroundColor','#149ddd');
+const stageIdle = ()=>{
+    $('.sendMailBtn').text('Send Message');
+    $('.sendMailBtn').css('backgroundColor','#149ddd');
 }

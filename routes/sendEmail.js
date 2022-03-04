@@ -1,16 +1,24 @@
 var nodemailer = require('nodemailer');
 
 var transporter = nodemailer.createTransport({
-  host: 'smtp-mail.outlook.com',                  // hostname
-  service: 'outlook',                             // service name
-  secureConnection: false,
-  tls: {
-      ciphers: 'SSLv3'                            // tls version
-  },
-  port: 587,
+  // host: 'smtp-mail.outlook.com',                  // hostname
+  // service: 'outlook',                             // service name
+  // secureConnection: false,
+  // tls: {
+  //     ciphers: 'SSLv3'                            // tls version
+  // },
+  // port: 587,
+  // auth: {
+  //   user: 'portfolio0629@outlook.com',
+  //   pass: 'Anujportfolio22@#',
+  // }
+  pool: true,
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
   auth: {
-    user: 'portfolio0629@outlook.com',
-    pass: 'Anujportfolio22@#',
+      user: 'portfolioanujverma@gmail.com',
+      pass: 'Hacker22@',
   }
 });
 
