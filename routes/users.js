@@ -9,7 +9,7 @@ router.use(express.urlencoded({extended:true}));
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
-router.post('/saveMessage', function(req, res, next) {
+router.post('/saveMessage',(req, res, next)=> {
   console.log(req.body)
   const {name,email,subject,message} = req.body;
   console.log(name +"  "+email+" "+subject+" "+message)

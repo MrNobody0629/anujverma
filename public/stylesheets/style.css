@@ -469,6 +469,18 @@ section {
   border: 2px solid #1f5297;
 }
 
+.resume-item span {
+  color: rgb(187, 134, 35);
+}
+.resume-item span.from {
+  color: rgb(94, 91, 91);
+}
+.resume-item span.session {
+  color: rgb(68, 64, 64);
+  font-size: 15px;
+
+}
+
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
@@ -944,11 +956,10 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  padding: 15px;
   color: #f4f6fd;
   font-size: 14px;
-  position: fixed;
-  left: 0;
+  position: relative;
+  margin-left: 300px;
   bottom: 0;
   width: 300px;
   z-index: 9999;
@@ -973,4 +984,12 @@ section {
 .navbar
 {
   justify-content: center;
+}
+
+.bio div.col-sm-6{
+  padding: 5px 12px 5px;
+}
+
+.state-message {
+  color: red;
 }

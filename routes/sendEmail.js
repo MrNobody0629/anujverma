@@ -1,11 +1,16 @@
 var nodemailer = require('nodemailer');
 
 var transporter = nodemailer.createTransport({
-  service: 'outlook',
+  host: 'smtp-mail.outlook.com',                  // hostname
+  service: 'outlook',                             // service name
+  secureConnection: false,
+  tls: {
+      ciphers: 'SSLv3'                            // tls version
+  },
+  port: 587,
   auth: {
-    // user: 'anujvermapersonalportfolio@outlook.com',
     user: 'portfolio0629@outlook.com',
-    pass: 'Anujportfolio22@#'
+    pass: 'Anujportfolio22@#',
   }
 });
 
